@@ -102,16 +102,16 @@ python setup.py install
 
 cd $adminset_dir
 pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-echo "please create your adminset' super admin:"
+#python manage.py makemigrations
+#python manage.py migrate
+#echo "please create your adminset' super admin:"
 #python manage.py createsuperuser
 source /etc/profile
-/usr/bin/mysql -e "insert into adminset.accounts_userinfo (password,username,email,is_active,is_superuser) values ('pbkdf2_sha256\$24000\$2odRjOCV1G1V\$SGJCqWf0Eqej6bjjxusAojWtZkz99vEJlDbQHUlavT4=','admin','admin@126.com',1,1);"
-scp $adminset_dir/install/server/adminset.service /usr/lib/systemd/system
-systemctl daemon-reload
-chkconfig adminset on
-service adminset start
+#/usr/bin/mysql -e "insert into adminset.accounts_userinfo (password,username,email,is_active,is_superuser) values ('pbkdf2_sha256\$24000\$2odRjOCV1G1V\$SGJCqWf0Eqej6bjjxusAojWtZkz99vEJlDbQHUlavT4=','admin','admin@126.com',1,1);"
+#scp $adminset_dir/install/server/adminset.service /usr/lib/systemd/system
+#systemctl daemon-reload
+#chkconfig adminset on
+#service adminset start
 
 #安装redis
 echo "####install redis####"
@@ -127,20 +127,20 @@ scp $adminset_dir/install/server/celery/celery.service /usr/lib/systemd/system
 scp $adminset_dir/install/server/celery/start_celery.sh $config_dir/celery/start_celery.sh
 scp $adminset_dir/install/server/celery/beat.service /usr/lib/systemd/system
 chmod +x $config_dir/celery/start_celery.sh
-systemctl daemon-reload
-chkconfig celery on
-chkconfig beat on
-service celery start
-service beat start
+#systemctl daemon-reload
+#chkconfig celery on
+#chkconfig beat on
+#service celery start
+#service beat start
 
 # 安装nginx
 echo "####install nginx####"
 yum install nginx -y
-chkconfig nginx on
+#chkconfig nginx on
 scp $adminset_dir/install/server/nginx/adminset.conf /etc/nginx/conf.d
 scp $adminset_dir/install/server/nginx/nginx.conf /etc/nginx
-service nginx start
-nginx -s reload
+#service nginx start
+#nginx -s reload
 
 # create ssh config
 echo "create ssh-key, you could choose no if you had have ssh key"
