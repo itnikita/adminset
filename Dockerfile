@@ -3,4 +3,4 @@ MAINTAINER ppabc <ppabc@qq.com>
 
 ENV TZ "Asia/Shanghai"
 COPY * /opt/
-bash /opt/adminset/install/server/auto_install.sh
+RUN  bash /opt/adminset/install/server/auto_install.sh
