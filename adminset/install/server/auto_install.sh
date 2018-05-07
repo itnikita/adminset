@@ -90,6 +90,7 @@ index-url = http://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
 EOF
+pip install --upgrade pip
 pip install kombu==4.1.0
 pip install celery==4.0.2
 pip install billiard==3.5.0.3
