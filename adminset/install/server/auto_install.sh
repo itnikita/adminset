@@ -77,8 +77,8 @@ mysql -e "CREATE DATABASE if not exists adminset DEFAULT CHARACTER SET utf8 COLL
 echo "####install mongodb####"
 echo "installing a new Mongodb...."
 yum install -y mongodb mongodb-server
-/bin/systemctl start mongod 
-/bin/systemctl enable mongod 
+service  mongod start
+chkconfig mongd on
 
 # 安装主程序
 echo "####install adminset####"
