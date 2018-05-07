@@ -116,8 +116,8 @@ source /etc/profile
 #安装redis
 echo "####install redis####"
 yum install redis -y
-chkconfig redis on
-service redis start
+#chkconfig redis on
+#service redis start
 
 # 安装celery
 echo "####install celery####"
@@ -155,15 +155,15 @@ scp $adminset_dir/install/server/ssh/config ~/.ssh/config
 
 # 完成安装
 echo "##############install finished###################"
-systemctl daemon-reload
-service redis restart
-service mariadb restart
-service adminset restart
-service celery restart
-service beat restart
-service mongod restart
-service sshd restart
-service webssh restart
+#systemctl daemon-reload
+#service redis restart
+#service mariadb restart
+#service adminset restart
+#service celery restart
+#service beat restart
+#service mongod restart
+#service sshd restart
+#service webssh restart
 echo "please access website http://server_ip"
 echo "you have installed adminset successfully!!!"
 echo "################################################"
