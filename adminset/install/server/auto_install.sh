@@ -68,17 +68,17 @@ systemctl enable webssh.service
 echo "####install database####"
 echo "installing a new mariadb...."
 yum install -y mariadb-server mariadb-devel
-service mariadb start
+#service mariadb start
 chkconfig mariadb on
-mysql -e "CREATE DATABASE if not exists adminset DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
+#mysql -e "CREATE DATABASE if not exists adminset DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
 
 
 # 安装mongodb
 echo "####install mongodb####"
 echo "installing a new Mongodb...."
 yum install -y mongodb mongodb-server
-service  mongod start
-chkconfig mongd on
+#service  mongod start
+##chkconfig mongd on
 
 # 安装主程序
 echo "####install adminset####"
