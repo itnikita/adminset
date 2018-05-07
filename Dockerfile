@@ -1,4 +1,4 @@
-FROM centos/python-27-centos7
+FROM centos:7
 MAINTAINER ppabc <ppabc@qq.com>
 
 ENV TZ "Asia/Shanghai"
