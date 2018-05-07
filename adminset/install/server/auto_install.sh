@@ -20,7 +20,8 @@ mkdir -p $logs_dir
 mkdir -p $main_dir/pid
 
 # 关闭selinux
-se_status=$(getenforce)
+se_status="dis"
+##se_status=$(getenforce)
 if [ $se_status != Enforcing ]
 then
     echo "selinux is diabled, install progress is running"
