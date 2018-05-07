@@ -19,32 +19,6 @@ mkdir -p $config_dir/webssh
 mkdir -p $logs_dir
 mkdir -p $main_dir/pid
 
-# 关闭selinux
-se_status="dis"
-##se_status=$(getenforce)
-if [ $se_status != Enforcing ]
-then
-    echo "selinux is diabled, install progress is running"
-    sleep 1
-else
-    echo "Please attention, Your system selinux is enforcing"
-    read -p "Do you want to disabled selinux?[yes/no]": shut
-    case $shut in
-        yes|y|Y|YES)
-            setenforce 0
-            sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/sysconfig/selinux
-            ;;
-        no|n|N|NO)
-            echo "please manual enable nginx access localhost 8000 port"
-            echo "if not, when you open adminset web you will receive a 502 error!"
-            sleep 3
-            ;;
-        *)
-            exit 1
-            ;;
-    esac
-fi
-
 
 # 安装依赖
 echo "####install depandencies####"
