@@ -1,5 +1,4 @@
 #/bin/bash
-/usr/sbin/init
 service mariadb start
 chkconfig mariadb on
 mysql -e "CREATE DATABASE if not exists adminset DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
