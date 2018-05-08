@@ -4,4 +4,4 @@ MAINTAINER ppabc <ppabc@qq.com>
 ENV TZ "Asia/Shanghai"
 COPY adminset /opt/
 RUN  bash /opt/install/server/auto_install.sh
-CMD ["/usr/sbin/init"]
+CMD ["/opt/start.sh"]
