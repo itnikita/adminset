@@ -36,7 +36,7 @@ fi
 # 安装依赖
 echo "####install depandencies####"
 yum install -y epel-release
-yum install -y gcc initscripts expect python-pip python-devel ansible smartmontools dmidecode libselinux-python git rsync dos2unix
+yum install -y gcc initscripts openssh-server openssh-clients expect python-pip python-devel ansible smartmontools dmidecode libselinux-python git rsync dos2unix
 yum install -y openssl openssl-devel
 # build webssh
 echo "build webssh"
